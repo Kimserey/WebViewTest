@@ -4,43 +4,37 @@ using Xamarin.Forms;
 
 namespace WebViewTest
 {
+	public interface IBaseUrl { string Get(); }
+
+	public class BaseUrlWebView : WebView { }
+
 	public class App : Application
 	{
 		public App()
 		{
-			// The root page of your application
-			var content = new ContentPage
-			{
-				Title = "WebViewTest",
-				Content = new StackLayout
-				{
-					VerticalOptions = LayoutOptions.Center,
-					Children = {
-						new Label {
-							HorizontalTextAlignment = TextAlignment.Center,
-							Text = "Welcome to Xamarin Forms!"
-						}
-					}
-				}
-			};
+			//var webView = new BaseUrlWebView();
+			//var html = new HtmlWebViewSource();
+			//html.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
+			//html.Html = 
+			//	@"<html>
+			//		<head>
+			//		<link rel=""stylesheet"" href=""default.css"">
+			//		</head>
+			//		<body>
+			//		<h1>Xamarin.Forms</h1>
+			//		<p>The CSS and image are loaded from local files!</p>
+			//		</body>
+			//	</html>";
+			//webView.Source = html;
 
-			MainPage = new NavigationPage(content);
-		}
+			var page = new TabbedPage();
+			page.Children.Add(new WebPage());
 
-		protected override void OnStart()
-		{
-			// Handle when your app starts
-		}
 
-		protected override void OnSleep()
-		{
-			// Handle when your app sleeps
-		}
-
-		protected override void OnResume()
-		{
-			// Handle when your app resumes
+			MainPage = page;
 		}
 	}
+
+
 }
 
