@@ -1,0 +1,8 @@
+﻿html, body {
+	margin-top:1em;
+	padding:1em;
+}
+
+body, p, h1 {
+	color: blue;
+}
