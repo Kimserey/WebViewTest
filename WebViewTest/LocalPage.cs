@@ -18,6 +18,7 @@ namespace WebViewTest
 					<body>
 					<h1>Xamarin.Forms</h1>
 					<p>The CSS and image are loaded from local files!</p>
+    				<img src='Images/ic_bug_report_black_48dp_2x.png'/>
 					</body>
 				</html>";
 			webView.Source = html;
