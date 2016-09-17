@@ -15,10 +15,9 @@ namespace WebViewTest
 			var page = new TabbedPage();
 			page.Children.Add(new WebPage());
 			page.Children.Add(new LocalPage());
+			page.Children.Add(new LinePage());
 			MainPage = page;
 		}
 	}
-
-
 }
 
