@@ -6,8 +6,6 @@ namespace WebViewTest
 {
 	public interface IBaseUrl { string Get(); }
 
-	public class BaseUrlWebView : WebView { }
-
 	public class App : Application
 	{
 		public App()

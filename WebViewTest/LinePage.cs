@@ -63,8 +63,9 @@ namespace WebViewTest
 		                    l: 30,
 		                    r: 20,
 		                    b: 30,
-		                    t: 30
-		                },
+		                    t: 30,
+							pad: 5
+		                },  
 		                showlegend: false
 		            };
 
@@ -93,7 +94,7 @@ namespace WebViewTest
 			
 			webView.Source = html;
 			Content = webView;
-			Title = "Local page";
+			Title = "Line page";
 		}
 	}
 }
