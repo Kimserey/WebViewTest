@@ -23,7 +23,7 @@ namespace WebViewTest
 				</html>";
 			webView.Source = html;
 			Content = webView;
-			Title = "Local page";
+			Title = "Local";
 		}
 	}
 }
