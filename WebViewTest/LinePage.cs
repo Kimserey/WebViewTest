@@ -66,7 +66,7 @@ namespace WebViewTest
 		                    b: 30,
 		                    t: 30,
 							pad: 5
-		                },  
+		                },
 		                showlegend: false
 		            };
 

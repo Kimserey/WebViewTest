@@ -30,48 +30,48 @@ namespace WebViewTest
 			var meta = JsonConvert.SerializeObject(data, App.JSON_SETTINGS);
 
 			var js =
-				 @"(function() {
-	            var data =
-	                JSON.parse(
-	                    document
-	                    .querySelector(""meta[name='data']"")
-	                    .getAttribute('content')
-	                );
+				 @"
+			        (function() {
 
-	            var plot =
-	                Plotly.d3
-	                .select('body')
-	                .append('div')
-	                .style({
-	                    width: '100%',
-	                    'margin-top': '5%',
-	                    height: '90%',
-						border: '1px solid black'
-	                })
-	                .node();
+ 	                   var data =
+ 	                       JSON.parse(
+ 	                           document
+ 	                           .querySelector(""meta[name='data']"")
+ 	                           .getAttribute('content')
+ 	                       );
 
-	            var layout = {
-	                margin: {
-	                    l: 30,
-	                    r: 20,
-	                    b: 30,
-	                    t: 30,
-						pad: 5
-	                },
-					height: 400,
-  					width: 500
-	            };
+			            var plot =
+			                Plotly.d3
+			                .select('body')
+			                .append('div')
+			                .style({
+			                    width: '100%',
+								height: '50%',
+			                    'margin-top': '10%'
+			                })
+			                .node();
 
-	            var config = {
-	                displayModeBar: false
-	            };
+			            var layout = {
+			                name: 'pie',
+			                margin: {
+			                    l: 0,
+			                    r: 0,
+			                    b: 0,
+			                    t: 0
+			                }
+			            };
 
-	            Plotly.plot(plot, data, layout, config);
+			            var config = {
+			                displayModeBar: false
+			            };
 
-	            window.onresize = function() {
-	                Plotly.Plots.resize(plot);
-	            };
-	        })();";
+			            Plotly.plot(plot, data, layout, config);
+
+			            window.onresize = function() {
+			                Plotly.Plots.resize(plot);
+			            };
+			        })();
+				";
 
 			webView.SetHtml(
 				"<html>"
