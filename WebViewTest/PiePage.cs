@@ -30,7 +30,7 @@ namespace WebViewTest
 			var meta = JsonConvert.SerializeObject(data, App.JSON_SETTINGS);
 
 			var js =
-				 @"
+				 @" 
 			        (function() {
 
  	                   var data =
@@ -58,7 +58,10 @@ namespace WebViewTest
 			                    r: 0,
 			                    b: 0,
 			                    t: 0
-			                }
+			                },
+							font: {
+								size: 25
+							}
 			            };
 
 			            var config = {

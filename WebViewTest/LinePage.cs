@@ -61,12 +61,15 @@ namespace WebViewTest
 
 		            var layout = {
 		                margin: {
-		                    l: 30,
+		                    l: 40,
 		                    r: 20,
-		                    b: 30,
+		                    b: 40,
 		                    t: 30,
 							pad: 5
 		                },
+						font: {
+							size: 25
+						},
 		                showlegend: false
 		            };
 
