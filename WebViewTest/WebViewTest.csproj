@@ -38,6 +38,7 @@
     <Compile Include="HybridWebView.cs" />
     <Compile Include="PiePage.cs" />
     <Compile Include="ResizableWebView.cs" />
+    <Compile Include="BarPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">

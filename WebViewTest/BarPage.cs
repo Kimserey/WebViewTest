@@ -1,41 +1,35 @@
 ﻿using System;
-using Xamarin.Forms;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using Xamarin.Forms;
 
 namespace WebViewTest
 {
-	public class LinePage : ContentPage
+	public class BarPage : ContentPage
 	{
-		public class LineShape
-		{
-			public string Shape { get; set; }
-		}
-
 		public class Data
 		{
-			public string[] X { get; set; }
-			public double[] Y { get; set; }
-			public LineShape Line { get; set; }
-			public string Name { get; set; }
+			public double[] X { get; set; }
+			public string[] Y { get; set; }
+			public string Type { get; set; }
+			public string Orientation { get; set; }
 		}
 
-		public LinePage(string baseUrl)
+		public BarPage(string baseUrl)
 		{
 			var webView = new ResizableWebView(baseUrl);
 
-			var data = new[] { 
+			var data = new[] {
 				new Data {
-					X = new[] { "2013-04-15", "2013-11-06", "2013-12-04", "2014-02-06" },
-					Y = new[] { 2.4, 30, 34, 20.1 },
-					Line = new LineShape { Shape = "spline" },
-					Name = "Supermarket" 
+					X = new[] { 24.0, 30.0, 34.0 },
+					Y = new[] { "Dog", "Cat", "Fish" },
+					Orientation = "v",
+					Type = "bar"
 				},
 				new Data {
-					X = new[] { "2013-10-04", "2013-11-04", "2013-12-06" },
-					Y = new[] { 1.0, 3.0, 6.0 },
-					Line = new LineShape { Shape = "spline" },
-					Name = "Leisure"
+					X = new[] { 10.0, 30.0, 60.0 },
+					Y = new[] { "Dog", "Cat", "Fish" },
+					Orientation = "v",
+					Type = "bar"
 				}
 			};
 
@@ -56,20 +50,22 @@ namespace WebViewTest
 		                .append('div')
 		                .style({
 		                    width: '100%',
-		                    'margin-top': '5%',
-		                    height: '90%'
+		                    'margin-top': '5%'
 		                })
 		                .node();
 
 		            var layout = {
 		                margin: {
-		                    l: 40,
+		                    l: 150,
 		                    r: 20,
 		                    b: 40,
 		                    t: 30,
 							pad: 5
 		                },
 						font: {
+							size: 25
+						},
+						marker: {
 							size: 25
 						},
 		                showlegend: false
@@ -86,22 +82,20 @@ namespace WebViewTest
 		            };
 		        })();";
 
-			webView.SetHtml( 
+			webView.SetHtml(
 				"<html>"
 				+ "<head>"
-		    	+ 	"<link rel=\"stylesheet\" href=\"style.css\">"
-				+ 	"<script src=\"plotly-latest.min.js\"></script>"
-				+ 	"<meta id=\"line-data\" name=\"line-data\" content='"+ meta + "'>"
+				+ "<link rel=\"stylesheet\" href=\"style.css\">"
+				+ "<script src=\"plotly-latest.min.js\"></script>"
+				+ "<meta id=\"line-data\" name=\"line-data\" content='" + meta + "'>"
 				+ "</head>"
 				+ "<body>"
-			    + 	"<script>" + js + "</script>"       
+				+ "<script>" + js + "</script>"
 				+ "</body>"
-			                + "</html>");
-			
+							+ "</html>");
+
 			Content = webView;
-			Title = "Line";
+			Title = "Bar";
 		}
 	}
 }
-
-

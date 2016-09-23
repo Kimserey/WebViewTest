@@ -18,9 +18,7 @@ namespace WebViewTest
 			
 			var page = new TabbedPage();
 
-			var layout = new StackLayout { Padding = new Thickness(10, 50) };
-			layout.Children.Add(new Label { Text = "Must put something here other than webpage for overview" });
-			page.Children.Add(new ContentPage { Title = "Overview", Content = layout });
+			page.Children.Add(new BarPage(baseUrl));
 			page.Children.Add(new PiePage(baseUrl));
 			page.Children.Add(new LinePage(baseUrl));
 			page.Children.Add(new WebPage());
